@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment3</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+
+		body{	
+			background-image: url(back.jpg);
+			/*background-size: 100%;*/
+			background-repeat: no-repeat;
+			height: 100vh;
+			padding-top: 0px;
+			background-attachment: fixed;
+			}
+		.top_menu{
+			background-color: rgba(73, 203, 242,0.5);
+			width: 100%;
+			display: inline-block;
+			padding: 3px;
+			
+
+		}
+		.top_menu > .btn{
+			display: inline-block;
+			font-size: 20px;
+			padding: 8px;
+			color: white;
+		}
+		.btn > .fa{
+			background-color:#49cbf2;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			border-radius: 10%;
+		}
+		.top_menu > .button{
+			background-color: #49cbf2;
+			display: inline-block;
+			font-size: 20px;
+			padding: 4px;
+			border-radius: 10%;
+			color: white;			
+		}
+		.button > .fa{
+			background-color: #49cbf2;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			border-radius: 25%;
+		}
+		.top_menu .btn1{
+			display: inline-block;
+			font-size: 25px;
+			padding: 4px;
+			border-radius: 10%;
+		}
+		.top_menu > .menu{
+			display: inline-block;
+			font-size: 20px;
+			padding: 8px;
+			color: white;
+			float: right;
+			text-align: center;
+		}
+		.menu > .fa{
+			background-color: #49cbf2;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			border-radius: 10%;
+		}
+		 input:focus{
+			background-color: white;
+		} 
+	.next_menu{
+			background-color: rgba(78, 105, 135,0.5);
+			width: 100%;
+			display: inline-block;
+			
+		}
+		.next_menu > .next_btn{
+			display: inline-block;
+			font-size: 15px;
+			padding: 2px;
+			color: white;
+		}
+		.next_menu > .next_btn1{
+			display: inline-block;
+			font-size: 15px;
+			padding-top: : 2px;
+			color: white;
+			float: right;
+			text-align: center;
+		}
+		.next_btn1 > .fa{
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			padding-top: 10px;
+		}
+/*flex box*/
+		.board{
+			display: flex;
+			background-color: transparent;
+			
+		}
+		.board > div{
+			background-color: rgba(213, 229, 230,0.7);
+			padding: 10px;
+			margin: 10px;
+			align-self: flex-start;
+			border-radius: 5%;
+			
+		}
+		.child_container{
+			display: flex;
+			flex-direction: column;
+			width: 300px;
+			flex-wrap: nowrap;
+			flex-shrink: 0px;
+			
+		}
+		.child_container > .child{
+			display: flex;
+			flex-direction: column;
+			background-color: white;
+			padding: 7px;
+			border-radius: 5%;
+			width: 180px;
+		}
+		.child_container > .child1{
+			/*display: flex;*/
+			flex-direction: column;
+			background-color: white;
+			padding: 7px;
+			border-radius: 5%;
+			width: 180px;
+		}
+		.child_container > .parent{
+			/*display: flex;*/
+			flex-direction: column;
+			background-color: white;
+			padding: 7px;
+			border-radius: 5%;
+			width: 180px;
+			height: 35px;
+
+		}
+		.child_container > .parent{
+			list-style-type: none;
+			margin: 0px;
+			padding: 0px;
+		}
+		.child_container > .parent:hover{
+			cursor: pointer;
+			color: rgba(172, 173, 173,0.8);
+		}
+		.parent > li{
+			display: inline;
+		}
+		.parent > .hide{
+			display: none;
+		}
+		 .parent > li:hover + .hide{
+			display: block;
+			color:rgba(172, 173, 173,0.8) ;
+			cursor: pointer;
+		}
+		.child_container > p{
+			width: 180px;
+		}
+		.child_container > div{
+			display: inline-block;
+			width: 100%;
+		}
+
+		.top_menu > .btn:hover, .top_menu > .button:hover, .top_menu > .menu:hover{
+			cursor: pointer;
+			color: rgba(90, 123, 166,0.5);
+		}
+		.next_menu > .next_btn1:hover{
+			cursor: pointer;
+			color: rgba(193, 207, 224,0.6);
+		}
+		.child_container > .child:hover{
+			cursor: pointer;
+			color: rgba(172, 173, 173,0.8);
+		}
+		.child_container > p:hover{
+			cursor: pointer;
+			color: rgba(107, 110, 110,0.8);
+		}
+		.child_container > button:hover{
+			cursor: pointer;
+			color:rgba(209, 237, 185,0.5);
+			background-color: rgba(209, 237, 185,0.5);
+		}
+	</style>
+</head>
+<body>
+	<div class="top_menu">
+		<div class="btn"><i class="fa fa-home" aria-hidden="true"></i></div>
+		<div class="button"><i class="fa fa-th-list" aria-hidden="true"></i>Boards</div>
+		<div class="btn1"><input type="text" name="text" style="width: 100px; height:25px; background-color: #49cbf2; border: none;  "></div>
+		<div class="btn" style="align-items: center; padding-left: 25%">Tralala</div>
+		<div class="menu"><i class="fa fa-user-o" aria-hidden="true"></i></div>
+		<div class="menu"><i class="fa fa-plus" aria-hidden="true"></i></div>
+	</div>
+	<div class="next_menu">
+		<div class="next_btn"><p>Frontend Training</p></div>
+		<div class="next_btn1"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Show Menu</div>
+	</div>
+
+	<div class="board">
+	<div class="child_container">
+		
+		<h3>To Do</h3>
+		<!--div class="parent">
+		<div>Learn HTML</div>
+		<div style="float: right;"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+		</div-->
+		<ul class="parent">
+			<li>Learn HTML</li>
+			<li class="hide" style="float: right;"><i class="fa fa-pencil" aria-hidden="true"></i></li>
+		</ul><br>
+		<ul class="parent">
+			<li>Learn CSS</li>
+			<li class="hide" style="float: right;"><i class="fa fa-pencil" aria-hidden="true"></i></li>
+		</ul><br>
+		<ul class="parent">
+			<li>Learn JavaScript</li>
+			<li class="hide" style="float: right;"><i class="fa fa-pencil" aria-hidden="true"></i></li>
+		</ul>
+		<br>
+		<!--div class="child1">Learn CSS</div>
+		<br>
+		<div class="child1">Learn JavaScript</div-->
+		<p>+ Add another card</p>
+
+	</div>
+
+	<div class="child_container">
+		<h3>Doing</h3>
+		<div class="child">Prepare Resume</div>
+		<br>
+		<div class="child"> <textarea style="resize: none; border: none;">Enter a title card for this card...</textarea></div>
+		<br>
+		<button style="width: 100px; height: 30px; background-color: #07ab17">Add Card</button>
+	</div>
+	<div class="child_container">
+		<h3>Testing/Verifying</h3>
+		<div class="child">Twitter app frontend</div>
+		<br>
+		<p>+ Add another card</p>
+	</div>
+	<div class="child_container">
+		<h3>Deploying</h3>
+		<div class="child">Twitter app backend</div>
+		<br>
+		<p>+ Add another card</p>
+	</div>
+	<div class="child_container">
+		<h3>Done</h3>		
+		<p>+ Add card</p>
+	</div>
+	<div class="child_container">	
+		<p>+ Add another list</p>
+	</div>
+	<div class="child_container">	
+		<div class="child"> <textarea style="resize: none; border: none;">Enter list title...</textarea></div><br>
+		<button style="width: 70px; height: 30px; background-color: #07ab17;">Add List</button>
+	</div>
+
+</div>
+		
+</body>
+</html>
